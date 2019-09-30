@@ -1,0 +1,82 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;*/
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.scrollable{
+    overflow:scroll;
+
+}
+
+div a:hover {
+    background-color: #0094ff;
+}
+
+.myclass {
+    white-space:nowrap;
+}
+
+
+.calendar {
+    height: 12vw;
+    background-color: #eeeeee;
+}
+
+.filters {
+    padding-left: 20px;
+    height: 6vw;
+    background-color: #eeeeee;
+}
+
+
+.myclass_container {
+    margin-left:0px;
+    margin-right:0px;
+    padding-left:0px;
+}
+
+.myclass_userhello{
+    margin-right:20px;
+}
+
+.myclass_actiontab{
+    text-align:center;
+}
+
+.myclass_editDeleteButtons {
+    background-color:lightgray;
+
+}
+
+.button_myclass{
+
+}
+
+
+.myclass_attributesbutton {
+    padding-top: 1vh;
+    padding-left: 78vw;
+}
+
+  
+
