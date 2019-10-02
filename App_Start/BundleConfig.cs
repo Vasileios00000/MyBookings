@@ -21,14 +21,26 @@ namespace MyBookings
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/gijgo").Include(
+                        "~/Scripts/gijgo.min.js"));
+
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/umd/popper.js",
                       "~/Scripts/bootstrap.js"));
 
+
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/multiple_select.css",
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/gijgo.min.css",
                       "~/Content/site.css"));
+
+
+
 
 
         }

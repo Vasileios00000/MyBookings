@@ -126,3 +126,4 @@ D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.dbset.resources
 D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.correction.resources
 D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.shownattributesid.resources
 D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.oo.resources
+D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.anynew.resources

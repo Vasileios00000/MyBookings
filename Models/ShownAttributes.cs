@@ -1,12 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace MyBookings.Models
 {
-    public enum Shown_Attributes_enum {Id, Property, ClientName, CheckIn,CheckOut,Guests, WebSite, Country, Email, PhoneNumber, ArrivalDetails, Note}
+    public enum Shown_Attributes_enum
+    {   Id,
+        Property,
+        ClientName,
+        CheckIn,
+        CheckOut,
+        Guests,
+        WebSite,
+        Country,
+        Email,
+        PhoneNumber,
+        ArrivalDetails,
+        Note
+    }
 
 
     public class ShownAttributes
@@ -36,7 +51,7 @@ namespace MyBookings.Models
 
         public bool ArrivalDetails { get; set; } = true;
 
-        public bool Notes { get; set; }
+        public bool Notes { get; set; } = true;
 
 
         public virtual ApplicationUser ApplicationUser { get; set; }

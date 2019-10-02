@@ -36,11 +36,20 @@ namespace MyBookings.Controllers
             public ActionResult Index()
             {
 
+            
+
+
+
 
             List<Booking> list = new List<Booking>();
             List<Property> properies_oftheUser = new List<Property>();
             
             string userid = User.Identity.GetUserId();
+
+            if (userid == null)
+            {
+                return RedirectToAction("Login", "Account");
+            };
 
 
             properies_oftheUser = _context.Properties.Where(x => x.ApplicationUserId == userid).ToList();
@@ -64,17 +73,6 @@ namespace MyBookings.Controllers
   
             };
 
-            //if (Request.IsAuthenticated)
-            //{
-            //    string attributesid = _context.Users.Find(userid).AttributesId;
-            //    booking_list.shownattributes_user = _context.ShownAttributes.Find(attributesid);
-
-            ////}
-
-            //else
-            //{
-            //    booking_list.shownattributes_user = new ShownAttributes();
-            //}
 
             return View(booking_list);
         }

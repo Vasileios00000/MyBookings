@@ -255,6 +255,10 @@
     <Compile Include="Migrations\201909271155195_oo.Designer.cs">
       <DependentUpon>201909271155195_oo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909301443508_anynew.cs" />
+    <Compile Include="Migrations\201909301443508_anynew.Designer.cs">
+      <DependentUpon>201909301443508_anynew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -279,6 +283,8 @@
     <Content Include="Content\bootstrap-select.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\gijgo.min.css" />
     <Content Include="Content\multiple_select.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -307,6 +313,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\gijgo.min.js" />
     <Content Include="Scripts\i18n\defaults-am_ET.js" />
     <Content Include="Scripts\i18n\defaults-am_ET.min.js" />
     <Content Include="Scripts\i18n\defaults-ar_AR.js" />
@@ -548,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909271155195_oo.resx">
       <DependentUpon>201909271155195_oo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301443508_anynew.resx">
+      <DependentUpon>201909301443508_anynew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

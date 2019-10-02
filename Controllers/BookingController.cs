@@ -25,6 +25,7 @@ namespace MyBookings.Controllers
         {
             AddBookingViewModel model = new AddBookingViewModel();
 
+
             var user_id = User.Identity.GetUserId();
             var propertiesofowner = _context.Properties.Where(x => x.ApplicationUserId == user_id).ToList();
             model.Properties = propertiesofowner;
