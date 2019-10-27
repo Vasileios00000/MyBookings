@@ -1,5 +1,4 @@
-﻿
-@model MyBookings.ViewModels.FilteredBookingViewModel
+﻿@model MyBookings.ViewModels.FilteredBookingViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -143,11 +142,18 @@
                 }
                 @if (Model.shownattributes_user.WebSite)
                 {
-                    <th scope="col">@item.WebSite</th>
+
+                    string website_icon = item.WebSite + ".png";
+                    if (!Model.SavedWebsitesImages.Contains(item.WebSite))
+                    {
+                        website_icon = "unknown_website.png";
+                    }
+                    <th scope="col"><img src="~/Data/websites/@website_icon" class="myclass_image" />@item.WebSite</th>
                 }
                 @if (Model.shownattributes_user.Country)
                 {
-                    <th scope="col">@item.Country</th>
+                    string flagname = item.Country + ".png";
+                    <th scope="col"><img src="~/Data/flags/@flagname" class="myclass_image" />@item.Country</th>
                 }
                 @if (Model.shownattributes_user.PhoneNumber)
                 {
@@ -188,9 +194,8 @@
         })
         console.log('hi3')
 
+        //gijgo  module for pick date through calendar
 
-
-        //gijgo
          var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#startDate').datepicker({
             uiLibrary: 'bootstrap4',

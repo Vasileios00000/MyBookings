@@ -17,6 +17,8 @@ namespace MyBookings.Models
 
         public DbSet<ShownAttributes> ShownAttributes { get; set; }
 
+        public DbSet<Image> Images { get; set; }
+
 
 
         public ApplicationDbContext()

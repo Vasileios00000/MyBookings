@@ -41,10 +41,6 @@ namespace MyBookings.Models
         public Property Property { get; set; }
 
 
-
-
-
-
     }
 
 

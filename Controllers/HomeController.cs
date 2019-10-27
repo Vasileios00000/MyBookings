@@ -33,14 +33,8 @@ namespace MyBookings.Controllers
 
 
 
-            public ActionResult Index()
-            {
-
-            
-
-
-
-
+        public ActionResult Index()
+        {        
             List<Booking> list = new List<Booking>();
             List<Property> properies_oftheUser = new List<Property>();
             
@@ -69,10 +63,10 @@ namespace MyBookings.Controllers
             {
                 FilteredBookings = list.OrderBy(x => x.CheckIn),
                 PropertiesOfTheUser = properies_oftheUser,
-                shownattributes_user = _context.ShownAttributes.Where(x => x.ApplicationUser.Id == userid).FirstOrDefault()
+                shownattributes_user = _context.ShownAttributes.Where(x => x.ApplicationUser.Id == userid).FirstOrDefault(),
+                SavedWebsitesImages = _context.Images.Where(c => c.ImageType == "Website").Select(d => d.ImageName).ToList()
   
             };
-
 
             return View(booking_list);
         }

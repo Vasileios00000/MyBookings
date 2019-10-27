@@ -20,11 +20,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Properties, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(Model => Model.PropertyId,
-                    new SelectList(Model.Properties, "Id", "Name"),
-                    "Select Property",
-                    new { @class = "form-control" })
-
+            @Html.DropDownListFor(Model => Model.PropertyId, new SelectList(Model.Properties, "Id", "Name"), "Select Property", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Properties, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -61,101 +57,119 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            Select Country
+        </div>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+            <select id="selector" class="vodiapicker form-control" name="@Html.NameFor(m=>m.Country)">
+                @foreach (var item in Model.Countries)
+                {
+                    string flagname = item + ".png";
+                    <option value="@item" data-thumbnail="Data/flags/@flagname">@item</option>
+                }
+            </select>
+
+            <div class="lang-select">
+                <button class="btn-select" type="button" value=""></button>
+                <div class="b">
+                    <ul id="a"></ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.WebSite, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.WebSite, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.WebSite, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.WebSite, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select id="selector2" class="form-control" name="@Html.NameFor(m=>m.WebSite)">
+                    @foreach (var item in Model.Websites)
+                    {
+                        <option>@item</option>
+                    }
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrivalDetails, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ArrivalDetails, new { @class = "form-control", @cols = 30, @rows = 2 })
+                @Html.ValidationMessageFor(model => model.ArrivalDetails, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", @cols = 30, @rows = 2 })
+                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
+    }
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-        </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrivalDetails, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(model => model.ArrivalDetails, new { @class = "form-control", @cols = 30, @rows = 2 })
-            @Html.ValidationMessageFor(model => model.ArrivalDetails, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(model => model.Notes, new { @class = "form-control", @cols = 30, @rows = 2 })
-            @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/select2")
 
 
+        <script>
+            //gijgo
+            //without the maxDate attribute
 
-    <script>
+            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 
-        //gijgo
-        //without the maxDate attribute
-        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+            $('#startDate').datepicker({
+                format: 'dd mmm yyyy',
+                value: '1/1/2020',
+                uiLibrary: 'bootstrap4',
+                iconsLibrary: 'fontawesome',
+                minDate: today
+            });
+            $('#endDate').datepicker({
+                format: 'dd mmm yyyy',
+                value: '1/1/2020',
+                uiLibrary: 'bootstrap4',
+                iconsLibrary: 'fontawesome',
+                minDate: function () {
+                    return $('#startDate').val();
+                }
+            });
 
-        window.onload = function () {
-            var item1 = document.getElementById('startDate');
-            item1.value = 'Arrival Date';
-             var item2 = document.getElementById('endDate');
-            item2.value = 'Departure Date';
-        }
-
-        $('#startDate').datepicker({
-        uiLibrary: 'bootstrap4',
-        iconsLibrary: 'fontawesome',
-        minDate: today,
-            maxDate: function () {
-                console.log('ok');
-        }
-        });
-
-        $('#endDate').datepicker({
-        uiLibrary: 'bootstrap4',
-        iconsLibrary: 'fontawesome',
-        minDate: function () {
-        return $('#startDate').val();
-        }
-        });
-
-    </script>
+            //select2 for adding new item in droplist dynamically
+            $("#selector2").select2({
+                tags: true
+                });
 
 
-}
+        </script>
+
+
+    }

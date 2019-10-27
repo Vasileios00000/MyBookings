@@ -8,8 +8,7 @@ namespace MyBookings
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(              
                         "~/Scripts/multiple.js",
                         "~/Scripts/jquery-{version}.js"));
 
@@ -26,10 +25,13 @@ namespace MyBookings
 
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/CountrySelect/CountrySearch.js",
+                      "~/Scripts/CountrySelect/Image-text-binder.js",
                       "~/Scripts/umd/popper.js",
                       "~/Scripts/bootstrap.js"));
 
-
+            bundles.Add(new ScriptBundle("~/bundles/select2").Include(
+                      "~/Scripts/Select2/select2.min.js"));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -37,6 +39,7 @@ namespace MyBookings
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.min.css",
                       "~/Content/gijgo.min.css",
+                      "~/Content/select2.css",
                       "~/Content/site.css"));
 
 

@@ -7,6 +7,9 @@ using System.Web.Mvc;
 using MyBookings.ViewModels;
 using MyBookings.ViewModel;
 using Microsoft.AspNet.Identity;
+using System.Globalization;
+using System.Web.UI.WebControls;
+using MyBookings.Persistance;
 
 namespace MyBookings.Controllers
 {
@@ -15,8 +18,18 @@ namespace MyBookings.Controllers
 
         private ApplicationDbContext _context;
 
+        private readonly IUnitOfWork _unitofwork;
+
         public BookingController()
         {
+            _context = new ApplicationDbContext();
+            _unitofwork = new UnitOfWork(_context);
+        }
+        
+
+        public BookingController(IUnitOfWork unitofwork)
+        {
+            _unitofwork = unitofwork;
             _context = new ApplicationDbContext();
         }
 
@@ -29,6 +42,8 @@ namespace MyBookings.Controllers
             var user_id = User.Identity.GetUserId();
             var propertiesofowner = _context.Properties.Where(x => x.ApplicationUserId == user_id).ToList();
             model.Properties = propertiesofowner;
+            model.Countries = _unitofwork.Images.GetAllCountries();
+            model.Websites = _unitofwork.Images.GetAllWebsites();
 
             return View(model);
         }
@@ -66,7 +81,6 @@ namespace MyBookings.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
 
         public ActionResult DeleteBooking(int id)
         {

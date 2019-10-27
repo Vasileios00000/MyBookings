@@ -22,6 +22,8 @@ namespace MyBookings.ViewModels
 
         public CultureInfo cultureinfo { get; set; }
 
+        public IEnumerable<string> SavedWebsitesImages { get; set; }
+
 
         public List<string> GetEnumValues()
         {
@@ -31,6 +33,8 @@ namespace MyBookings.ViewModels
         public FilteredBookingViewModel()
         {
            cultureinfo = new CultureInfo("en-US");
+           SavedWebsitesImages = new List<string>();
+
         }
 
 

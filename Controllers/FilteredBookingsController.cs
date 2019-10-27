@@ -49,13 +49,18 @@ namespace MyBookings.Controllers
                 }
             }
 
-            
+
 
             FilteredBookingViewModel filteredBooking = new FilteredBookingViewModel()
             {
                 FilteredBookings = filtered_booking_list.OrderBy(x => x.CheckIn),
-                PropertiesOfTheUser = _context.Properties.Where(x => x.ApplicationUserId == userid)
+                PropertiesOfTheUser = _context.Properties.Where(x => x.ApplicationUserId == userid),
+                SavedWebsitesImages = _context.Images.Where(x => x.ImageType == "Website").Select(x=>x.ImageName).ToList()
+                
             };
+
+
+
 
             if (Attributes == null)
             {
@@ -66,11 +71,8 @@ namespace MyBookings.Controllers
             {
                 List<string> AttributesList = Attributes.ToList();
 
-                ShownAttributes selected_attributes = new ShownAttributes()
-                {
-                    ApplicationUser = _context.Users.Where(x => x.Id == userid).FirstOrDefault(),
+                var selected_attributes = _context.ShownAttributes.Where(x => x.ApplicationUser.Id == userid).FirstOrDefault();
 
-                };
 
                 if (AttributesList.Contains("Id")) { selected_attributes.Show_Id = true; } else { selected_attributes.Show_Id = false; };
                 if (AttributesList.Contains("Property")) { selected_attributes.Property = true; } else { selected_attributes.Property = false; };
@@ -86,6 +88,8 @@ namespace MyBookings.Controllers
                 if (AttributesList.Contains("Notes")) { selected_attributes.Notes = true; } else { selected_attributes.Notes = false; };
 
                 filteredBooking.shownattributes_user = selected_attributes;
+                _context.SaveChanges();
+
             }
 
 
