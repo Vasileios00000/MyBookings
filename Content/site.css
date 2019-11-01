@@ -105,6 +105,18 @@ div a:hover {
     width:30px;
 }
 
+.myclass_dropdown_property {
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+}
+
+.myclass_propertyimage{
+    
+    height:70px;
+    width:auto;
+
+}
+
 
 
 /*.......css gia country selector.............*/

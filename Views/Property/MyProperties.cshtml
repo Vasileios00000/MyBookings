@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MyBookings.Models.Property>
+@{
+    ViewBag.Title = "My Properties";
+}
+
+<h2>My Properties</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category Type</th>
+            <th scope="col">Name</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{int i = 0;}
+        @foreach (var item in Model)
+        {
+            i++;
+
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@item.CategoryType</td>
+                    <td>@item.Name</td>
+                    @if (item.Image != null)
+                    {
+                    <td><img src="~/Data/properties/@item.Image" class="myclass_propertyimage"></td>
+                    }
+                    else
+                    {
+                    <td><img src="~/Data/properties/NoPropertyImage.png" class="myclass_propertyimage"></td>
+                    }
+                    <td>@item.Owner</td>
+                    <td>@item.Notes</td>
+                </tr>
+        }
+
+    </tbody>
+</table>
+

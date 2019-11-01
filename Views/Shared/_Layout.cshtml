@@ -25,9 +25,18 @@
                 </li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li class="nav-item active">
-                        @Html.ActionLink("Add a Property", "AddProperty", new { controller = "AddProperty" }, new { @class = "nav-link" })
-                    </li>
+                    @*<li class="nav-item active">
+                @Html.ActionLink("Add a Property", "AddProperty", new { controller = "AddProperty" }, new { @class = "nav-link" })
+            </li>*@
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle myclass_dropdown_property" data-toggle="dropdown">
+                            Properties
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action("MyProperties","Property")">My Properties</a>
+                            <a class="dropdown-item" href="@Url.Action("AddProperty","Property")">Add a new Property</a>
+                        </div>
+                    </div>
                     <li class="nav-item active">
                         @Html.ActionLink("New Booking", "AddBooking", new { controller = "Booking" }, new { @class = "nav-link" })
                     </li>
