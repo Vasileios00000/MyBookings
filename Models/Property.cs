@@ -21,6 +21,12 @@ namespace MyBookings.Models
 
         public string Notes { get; set; }
 
+        public int Bedrooms { get; set; }
+
+        public int Bathrooms { get; set; }
+
+        public int Sleeps { get; set; }
+
         public string ApplicationUserId { get; set; }
 
         public ICollection<Booking> Bookings { get; set; }

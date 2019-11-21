@@ -21,6 +21,13 @@ namespace MyBookings.ViewModel
 
             public string Notes { get; set; }
 
+            public int Bedrooms { get; set; }
+
+            public int Bathrooms { get; set; }
+
+            [Display(Name ="Sleeps (max persons)")]
+            public int Sleeps { get; set; }
+
             public ICollection<Booking> Bookings { get; set; }
 
 

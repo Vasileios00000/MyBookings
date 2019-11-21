@@ -47,6 +47,9 @@ namespace MyBookings.Controllers
                 Name = viewmodel.Name,
                 CategoryType = viewmodel.CategoryType,
                 Owner = viewmodel.Owner,
+                Bedrooms=viewmodel.Bedrooms,
+                Bathrooms=viewmodel.Bedrooms,
+                Sleeps=viewmodel.Sleeps,
                 Notes = viewmodel.Notes
 
 
@@ -72,7 +75,15 @@ namespace MyBookings.Controllers
         }
 
 
+        public ActionResult DeleteProperty(int id)
+        {
+            Property property = _context.Properties.Where(x => x.Id == id).FirstOrDefault();
 
+            _context.Properties.Remove(property);
+            _context.SaveChanges();
+
+            return RedirectToAction("MyProperties", "Property");
+        }
     }
 
 }

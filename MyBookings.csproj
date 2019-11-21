@@ -308,6 +308,10 @@
     <Compile Include="Migrations\201910232049370_dropCountries.Designer.cs">
       <DependentUpon>201910232049370_dropCountries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911011826456_property enhancement.cs" />
+    <Compile Include="Migrations\201911011826456_property enhancement.Designer.cs">
+      <DependentUpon>201911011826456_property enhancement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -632,6 +636,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910232049370_dropCountries.resx">
       <DependentUpon>201910232049370_dropCountries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911011826456_property enhancement.resx">
+      <DependentUpon>201911011826456_property enhancement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

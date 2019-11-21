@@ -158,3 +158,4 @@ D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.ImageModel.resour
 D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.ImageModelType.resources
 D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.ImageTypeColumn.resources
 D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.dropCountries.resources
+D:\IT\.NET Projects\MyBookings\obj\Debug\MyBookings.Migrations.propertyenhancement.resources
