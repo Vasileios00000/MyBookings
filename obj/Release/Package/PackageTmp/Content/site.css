@@ -1,0 +1,205 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;*/
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.scrollable{
+    overflow:scroll;
+
+}
+
+div a:hover {
+    background-color: #0094ff;
+}
+
+.myclass {
+    white-space:nowrap;
+}
+
+
+.calendar {
+    height: 12vw;
+    background-color: #eeeeee;
+}
+
+.filters {
+    padding-left: 20px;
+    height: 6vw;
+    background-color: #eeeeee;
+}
+
+
+.myclass_container {
+    margin-left:0px;
+    margin-right:0px;
+    padding-left:0px;
+}
+
+.myclass_userhello{
+    margin-right:20px;
+}
+
+.myclass_actiontab{
+    text-align:center;
+}
+
+.myclass_editDeleteButtons {
+    background-color:lightgray;
+
+}
+
+.button_myclass{
+
+}
+
+
+.myclass_attributesbutton {
+    padding-top: 1vh;
+    padding-left: 78vw;
+}
+
+.mycalss_checkincheckout{
+    padding-left:15px;
+}
+
+.img-fluid {
+    width: 25px;
+    position: absolute;
+    right: 5px;
+}
+
+#myInput {
+    height: 30px;
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.myclass_image{
+    width:30px;
+}
+
+.myclass_dropdown_property {
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+}
+
+.myclass_propertyimage{
+    
+    height:70px;
+    width:auto;
+
+}
+
+
+
+/*.......css gia country selector.............*/
+
+.vodiapicker {
+    display: none;
+}
+
+#a {
+    padding-left: 0px;
+}
+
+    #a img, .btn-select img {
+        width: 25px;
+    }
+
+    #a li {
+        list-style: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+        #a li:hover {
+            background-color: #F4F3F3;
+        }
+
+        #a li img {
+            margin: 5px;
+        }
+
+        #a li span, .btn-select li span {
+            margin-left: 30px;
+        }
+
+/* item list */
+
+.b {
+    display: none;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+}
+
+.open {
+    display: show !important;
+}
+
+.btn-select {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 280px;
+    height: 38px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+    .btn-select li {
+        list-style: none;
+        float: left;
+        padding-bottom: 0px;
+    }
+
+    .btn-select:hover li {
+        margin-left: 0px;
+    }
+
+    .btn-select:hover {
+        background-color: #F4F3F3;
+        border: 1px solid transparent;
+        box-shadow: inset 0 0px 0px 1px #ccc;
+    }
+
+    .btn-select:focus {
+        outline: none;
+    }
+
+.lang-select {
+    margin-left: 0px;
+}
+
+
+  
+

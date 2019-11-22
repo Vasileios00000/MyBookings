@@ -1,0 +1,69 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @*this is the css and favicon.ico*@
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MyBookings</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    @Html.ActionLink("Home", "Index", new { controller = "Home" }, new { @class = "nav-link" })
+                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @*<li class="nav-item active">
+                @Html.ActionLink("Add a Property", "AddProperty", new { controller = "AddProperty" }, new { @class = "nav-link" })
+            </li>*@
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle myclass_dropdown_property" data-toggle="dropdown">
+                            Properties
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action("MyProperties","Property")">My Properties</a>
+                            <a class="dropdown-item" href="@Url.Action("AddProperty","Property")">Add a new Property</a>
+                        </div>
+                    </div>
+                    <li class="nav-item active">
+                        @Html.ActionLink("New Booking", "AddBooking", new { controller = "Booking" }, new { @class = "nav-link" })
+                    </li>
+                }
+                <li class="nav-item active">
+                    @Html.ActionLink("Contact", "Contact", new { controller = "Home" }, new { @class = "nav-link" })
+                </li>
+
+            </ul>
+            <span class="navbar-text">
+                @Html.Partial("_LoginPartial")
+                Navbar text with an inline element
+            </span>
+        </div>
+    </nav>
+    <div class="container body-content" id="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/gijgo")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

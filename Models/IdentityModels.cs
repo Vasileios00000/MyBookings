@@ -22,7 +22,7 @@ namespace MyBookings.Models
 
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("WebDB", throwIfV1Schema: false)
         {
         }
 

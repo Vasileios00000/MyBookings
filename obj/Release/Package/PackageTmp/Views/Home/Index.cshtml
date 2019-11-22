@@ -1,0 +1,222 @@
+﻿@model MyBookings.ViewModels.FilteredBookingViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="calendar">
+    @using (Html.BeginForm("PropertiesSelection", "FilteredBookings", FormMethod.Get, new { @id = "search-form" }))
+    {
+        <div class="form-group myclass_attributesbutton">
+            <select name="Attributes" multiple="multiple" placeholder="Choose Attributes">
+
+
+                @foreach (var item in Model.GetEnumValues())
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+            <input type="submit" value="Show me" class="btn btn-dark button_myclass" />
+        </div>
+
+
+    }
+
+</div>
+
+
+<div class="filters" id="filters">
+
+    @using (Html.BeginForm("PropertiesSelection", "FilteredBookings", FormMethod.Get, new { @id = "search-form" }))
+    {
+        <div class="form-group">
+            <select name="Properties" multiple="multiple" placeholder="Choose property">
+
+                @{int j = 1;}
+                @foreach (var item in Model.PropertiesOfTheUser)
+                {
+                    j++;
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+
+            <input type="submit" value="Show me" class="btn btn-dark button_myclass" />
+        </div>
+    }
+
+</div>
+<table class="table myclass">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="myclass_actiontab">Action</th>
+            <th scope="col">#</th>
+            @if (Model.shownattributes_user.Show_Id)
+            {
+                <th scope="col">Id</th>
+            }
+            @if (Model.shownattributes_user.Property)
+            {
+                <th scope="col">Property</th>
+            }
+            @if (Model.shownattributes_user.ClientName)
+            {
+                <th scope="col">Client Name</th>
+            }
+            @if (Model.shownattributes_user.CheckIn)
+            {
+                <th scope="col">Check-In</th>
+            }
+            @if (Model.shownattributes_user.CheckOut)
+            {
+                <th scope="col">Check-Out</th>
+            }
+            @if (Model.shownattributes_user.Guests)
+            {
+                <th scope="col">Number of Guests</th>
+            }
+            @if (Model.shownattributes_user.WebSite)
+            {
+                <th scope="col">WebSite/Operator</th>
+            }
+            @if (Model.shownattributes_user.Country)
+            {
+                <th scope="col">Country</th>
+            }
+            @if (Model.shownattributes_user.PhoneNumber)
+            {
+                <th scope="col">PhoneNumber</th>
+            }
+            @if (Model.shownattributes_user.Email)
+            {
+                <th scope="col">Email</th>
+            }
+            @if (Model.shownattributes_user.ArrivalDetails)
+            {
+                <th scope="col">Arrival Details</th>
+            }
+            @if (Model.shownattributes_user.ArrivalDetails)
+            {
+                <th scope="col">Other Notes</th>
+            }
+        </tr>
+    </thead>
+
+
+
+    <tbody>
+        @{int i = 1;}
+        @foreach (var item in Model.FilteredBookings)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("EditBooking", "Booking", new { id = item.Id })" class="btn myclass_editDeleteButtons">Edit</a>
+                    <a href="@Url.Action("DeleteBooking", "Booking", new { id = item.Id })" class="btn myclass_editDeleteButtons">Delete</a>
+                </td>
+                <th scope="row">@i</th>
+                @{i++;}
+                @if (Model.shownattributes_user.Show_Id)
+                {
+                    <th scope="col">@item.Id</th>
+                }
+                @if (Model.shownattributes_user.Property)
+                {
+                    <th scope="col">@item.PropertyName</th>
+                }
+                @if (Model.shownattributes_user.ClientName)
+                {
+                    <th scope="col">@item.ClientName</th>
+                }
+                @if (Model.shownattributes_user.CheckIn)
+                {
+                    <th scope="col">@item.CheckIn.Date.ToString("ddd, dd MMM yyyy",Model.cultureinfo)</th>
+                }
+                @if (Model.shownattributes_user.CheckOut)
+                {
+                    <th scope="col">@item.CheckOut.Date.ToString("ddd, dd MMM yyyy",Model.cultureinfo)</th>
+                }
+                @if (Model.shownattributes_user.Guests)
+                {
+                    <th scope="col">@item.Guests</th>
+                }
+                @if (Model.shownattributes_user.WebSite)
+                {
+
+                    string website_icon = item.WebSite + ".png";
+                    if (!Model.SavedWebsitesImages.Contains(item.WebSite))
+                    {
+                        website_icon = "unknown_website.png";
+                    }
+                    <th scope="col"><img src="~/Data/websites/@website_icon" class="myclass_image" />@item.WebSite</th>
+                }
+                @if (Model.shownattributes_user.Country)
+                {
+                    string flagname = item.Country + ".png";
+                    <th scope="col"><img src="~/Data/flags/@flagname" class="myclass_image" />@item.Country</th>
+                }
+                @if (Model.shownattributes_user.PhoneNumber)
+                {
+                    <th scope="col">@item.PhoneNumber</th>
+                }
+                @if (Model.shownattributes_user.Email)
+                {
+                    <th scope="col">@item.Email</th>
+                }
+                @if (Model.shownattributes_user.ArrivalDetails)
+                {
+                    <th scope="col">@item.ArrivalDetails</th>
+                }
+                @if (Model.shownattributes_user.ArrivalDetails)
+                {
+                    <th scope="col">@item.Notes</th>
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+
+@section scripts
+{
+    <script>
+
+
+        var item = document.getElementById('container');
+        item.className = 'myclass_container';
+        console.log('hi');
+
+        $(function () {
+            console.log('hi2')
+            $('select').multipleSelect()
+
+        })
+        console.log('hi3')
+
+        //gijgo  module for pick date through calendar
+
+         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+
+
+
+
+    </script>
+
+
+}

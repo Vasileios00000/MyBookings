@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="vasilisg1985-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\IT\\\.NET\ Projects\\MyBookings\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\IT\\\.NET\ Projects\\MyBookings\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-MyBookings-20190919024947.mdf;Initial Catalog=aspnet-MyBookings-20190919024947;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\IT\\\.NET\ Projects\\MyBookings\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="WebDB-Web.config Connection String" description="" value="Data Source=SQL6007.site4now.net;Initial Catalog=DB_A50433_MyBookingsDB;User Id=DB_A50433_MyBookingsDB_admin;Password=mbdbp0000069745;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\IT\\\.NET\ Projects\\MyBookings\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WebDB']/@connectionString" />
+  </parameter>
+</parameters>
